@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>STER  MUIR</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="top-nav">
+            <div class="nav-left">
+                <ul>
+                    <li><a href="#">Novedades</a></li>
+                    <li><a href="#">Bolsos</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/ster-muir-logo.svg" alt="STER MUIR" class="logo-image">
+                </a>
+            </div>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="#">Artesanía</a></li>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#" class="icon-link">
+                        <i data-feather="search"></i>
+                    </a></li>
+                    <li><a href="#" class="icon-link">
+                        <i data-feather="shopping-bag"></i>
+                    </a></li>
+                    <li><a href="#" class="icon-link">
+                        <i data-feather="heart"></i>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="hamburger-menu">
+                <i data-feather="menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <nav>
+            <ul>
+                <li><a href="#">Novedades</a></li>
+                <li><a href="#">Bolsos</a></li>
+                <li><a href="#">Accesorios</a></li>
+                <li><a href="#">Artesanía</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+            </ul>
+            <div class="mobile-icons">
+                <a href="#" class="icon-link"><i data-feather="search"></i></a>
+                <a href="#" class="icon-link"><i data-feather="shopping-bag"></i></a>
+                <a href="#" class="icon-link"><i data-feather="heart"></i></a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="hero-container">
+        <img src="images/hero-image.jpg" alt="STER MUIR Collection">
+    </div>
+
+    <div class="elegant-quote">
+        <blockquote>
+            Tu <span class="highlight">esencia</span>, nuestro legado
+        </blockquote>
+    </div>
+
+    <div class="product-showcase">
+        <div class="product-item">
+            <div class="product-image-container">
+                <img src="images/placeholder-1.jpg" alt="Corazón Negro" class="product-image">
+                <div class="wishlist-icon">
+                    <i data-feather="heart"></i>
+                </div>
+            </div>
+            <h3 class="product-title">Corazón Negro</h3>
+            <p class="product-price">S/. 70.00</p>
+        </div>
+        
+        <div class="product-item">
+            <div class="product-image-container">
+                <img src="images/placeholder-2.jpg" alt="Corazón Marrón" class="product-image">
+                <div class="wishlist-icon">
+                    <i data-feather="heart"></i>
+                </div>
+            </div>
+            <h3 class="product-title">Corazón Marrón</h3>
+            <p class="product-price">S/. 70.00</p>
+        </div>
+        
+        <div class="product-item">
+            <div class="product-image-container">
+                <img src="images/placeholder-3.jpg" alt="Corazón Rojo" class="product-image">
+                <div class="wishlist-icon">
+                    <i data-feather="heart"></i>
+                </div>
+            </div>
+            <h3 class="product-title">Corazón Rojo</h3>
+            <p class="product-price">S/. 70.00</p>
+        </div>
+        
+        <div class="product-item">
+            <div class="product-image-container">
+                <img src="images/placeholder-4.jpg" alt="Corazón Blanco" class="product-image">
+                <div class="wishlist-icon">
+                    <i data-feather="heart"></i>
+                </div>
+            </div>
+            <h3 class="product-title">Corazón Blanco</h3>
+            <p class="product-price">S/. 70.00</p>
+        </div>
+    </div>
+
+    <div class="bottom-hero-container">
+        <img src="images/bottom-hero.jpg" alt="STER MUIR Collection" class="bottom-hero-image">
+    </div>
+
+    <div class="social-section">
+        <h2 class="social-title">Comunidad</h2>
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank" class="social-icon">
+                <i data-feather="instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" class="social-icon">
+                <i data-feather="facebook"></i>
+            </a>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+      // Initialize Feather icons
+      feather.replace();
+      
+      // Heart icon toggle functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const wishlistIcons = document.querySelectorAll('.wishlist-icon');
+        
+        wishlistIcons.forEach(icon => {
+          icon.addEventListener('click', function() {
+            this.classList.toggle('active');
+          });
+        });
+      });
+    </script>
+</body>
+</html> 
