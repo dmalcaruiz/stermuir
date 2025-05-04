@@ -580,8 +580,14 @@ body.menu-open {
 }
 
 @media (max-width: 768px) {
+    .elegant-quote {
+        margin: 1.5rem auto;
+        padding: 0 1rem;
+    }
+    
     .elegant-quote blockquote {
-        font-size: 3.40rem;
+        font-size: 2.8rem;
+        line-height: 1.1;
     }
 }
 
