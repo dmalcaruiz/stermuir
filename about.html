@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>STER  MUIR</title>
+    <title>Sobre Nosotros - STER MUIR</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
@@ -14,6 +14,59 @@
             width: 100%;
             margin: 0;
             padding: 0;
+        }
+        
+        .about-cover {
+            width: 100%;
+            height: 80vh;
+            position: relative;
+            background-color: #000;
+            overflow: hidden;
+        }
+        
+        .about-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+        
+        .about-cover-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            width: 80%;
+            max-width: 800px;
+        }
+        
+        .about-cover-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        
+        .about-cover-content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        
+        .content-placeholder {
+            min-height: 400px;
+            background-color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .about-cover-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-cover-content p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -58,64 +111,16 @@
         </nav>
     </div>
 
-    <div class="hero-container">
-        <img src="images/hero-image.jpg" alt="STER MUIR Collection">
-    </div>
-
-    <div class="elegant-quote">
-        <blockquote>
-            Tu esencia, <span class="highlight">nuestro legado</span>
-        </blockquote>
-    </div>
-
-    <div class="product-showcase">
-        <div class="product-item" data-product-id="corazon-negro">
-            <div class="product-image-container">
-                <img src="images/placeholder-1.jpg" alt="Corazón Negro" class="product-image">
-                <div class="wishlist-icon">
-                    <i data-feather="heart"></i>
-                </div>
-            </div>
-            <h3 class="product-title">Corazón Negro</h3>
-            <p class="product-price">S/. 70.00</p>
-        </div>
-        
-        <div class="product-item" data-product-id="corazon-marron">
-            <div class="product-image-container">
-                <img src="images/placeholder-2.jpg" alt="Corazón Marrón" class="product-image">
-                <div class="wishlist-icon">
-                    <i data-feather="heart"></i>
-                </div>
-            </div>
-            <h3 class="product-title">Corazón Marrón</h3>
-            <p class="product-price">S/. 70.00</p>
-        </div>
-        
-        <div class="product-item" data-product-id="corazon-rojo">
-            <div class="product-image-container">
-                <img src="images/placeholder-3.jpg" alt="Corazón Rojo" class="product-image">
-                <div class="wishlist-icon">
-                    <i data-feather="heart"></i>
-                </div>
-            </div>
-            <h3 class="product-title">Corazón Rojo</h3>
-            <p class="product-price">S/. 70.00</p>
-        </div>
-        
-        <div class="product-item" data-product-id="corazon-blanco">
-            <div class="product-image-container">
-                <img src="images/placeholder-4.jpg" alt="Corazón Blanco" class="product-image">
-                <div class="wishlist-icon">
-                    <i data-feather="heart"></i>
-                </div>
-            </div>
-            <h3 class="product-title">Corazón Blanco</h3>
-            <p class="product-price">S/. 70.00</p>
+    <div class="about-cover">
+        <img src="images/bottom-hero.jpg" alt="STER MUIR - Sobre Nosotros">
+        <div class="about-cover-content">
+            <h1>SOBRE NOSOTROS</h1>
+            <p>Descubre nuestra historia, misión y valores que nos inspiran a crear piezas únicas llenas de tradición y modernidad.</p>
         </div>
     </div>
 
-    <div class="bottom-hero-container">
-        <img src="images/bottom-hero.jpg" alt="STER MUIR Collection" class="bottom-hero-image">
+    <div class="content-placeholder">
+        <!-- Contenido de la página a agregar más adelante -->
     </div>
 
     <div id="contacto-section" class="contact-form-container">

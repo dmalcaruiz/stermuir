@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mis Favoritos - STER MUIR</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="top-nav">
+            <div class="nav-left">
+                <ul>
+                    <li><a href="#">Novedades</a></li>
+                    <li><a href="#">Bolsos</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/ster-muir-logo.svg" alt="STER MUIR" class="logo-image">
+                </a>
+            </div>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="#">Artesanía</a></li>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="#" class="icon-link">
+                        <i data-feather="search"></i>
+                    </a></li>
+                    <li><a href="#" class="icon-link">
+                        <i data-feather="shopping-bag"></i>
+                    </a></li>
+                    <li><a href="favorites.html" class="icon-link favorites-icon">
+                        <i data-feather="heart"></i>
+                        <span class="favorites-count"></span>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="hamburger-menu">
+                <i data-feather="menu"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <nav>
+            <ul>
+                <li><a href="#">Novedades</a></li>
+                <li><a href="#">Bolsos</a></li>
+                <li><a href="#">Accesorios</a></li>
+                <li><a href="#">Artesanía</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="mobile-icons">
+                <a href="#" class="icon-link"><i data-feather="search"></i></a>
+                <a href="#" class="icon-link"><i data-feather="shopping-bag"></i></a>
+                <a href="favorites.html" class="icon-link favorites-icon">
+                    <i data-feather="heart"></i>
+                    <span class="favorites-count"></span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <h1 class="favorites-title">Mis Favoritos</h1>
+    
+    <div id="favorites-container">
+        <!-- El contenido se generará dinámicamente con JavaScript -->
+    </div>
+
+    <div class="social-section">
+        <h2 class="social-title">Comunidad</h2>
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank" class="social-icon">
+                <i data-feather="instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" class="social-icon">
+                <i data-feather="facebook"></i>
+            </a>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize Feather icons
+        feather.replace();
+        
+        // Configuración de productos
+        const productData = {
+            'corazon-negro': {
+                title: 'Corazón Negro',
+                price: 'S/. 70.00',
+                image: 'images/placeholder-1.jpg'
+            },
+            'corazon-marron': {
+                title: 'Corazón Marrón',
+                price: 'S/. 70.00',
+                image: 'images/placeholder-2.jpg'
+            },
+            'corazon-rojo': {
+                title: 'Corazón Rojo',
+                price: 'S/. 70.00',
+                image: 'images/placeholder-3.jpg'
+            },
+            'corazon-blanco': {
+                title: 'Corazón Blanco',
+                price: 'S/. 70.00',
+                image: 'images/placeholder-4.jpg'
+            }
+        };
+        
+        // Cargar favoritos
+        document.addEventListener('DOMContentLoaded', function() {
+            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            const container = document.getElementById('favorites-container');
+            
+            if (favorites.length === 0) {
+                // Mostrar mensaje si no hay favoritos
+                container.innerHTML = `
+                    <div class="favorites-empty">
+                        <h2>No tienes favoritos guardados</h2>
+                        <p>Explora nuestros productos y haz clic en el corazón para guardarlos como favoritos.</p>
+                        <a href="index.html" class="btn">Ver productos</a>
+                    </div>
+                `;
+            } else {
+                // Crear la cuadrícula de favoritos
+                const grid = document.createElement('div');
+                grid.className = 'favorites-grid';
+                
+                favorites.forEach(productId => {
+                    const product = productData[productId];
+                    if (product) {
+                        const productElement = document.createElement('div');
+                        productElement.className = 'product-item';
+                        productElement.setAttribute('data-product-id', productId);
+                        
+                        productElement.innerHTML = `
+                            <div class="product-image-container">
+                                <img src="${product.image}" alt="${product.title}" class="product-image">
+                                <div class="wishlist-icon active">
+                                    <i data-feather="heart"></i>
+                                </div>
+                            </div>
+                            <h3 class="product-title">${product.title}</h3>
+                            <p class="product-price">${product.price}</p>
+                        `;
+                        
+                        grid.appendChild(productElement);
+                    }
+                });
+                
+                container.appendChild(grid);
+                feather.replace();
+            }
+        });
+    </script>
+</body>
+</html> 

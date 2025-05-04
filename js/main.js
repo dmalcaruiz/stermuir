@@ -77,4 +77,89 @@ document.addEventListener('DOMContentLoaded', () => {
             savePreferences('theme', newTheme);
         });
     }
+    
+    // Manejo de favoritos
+    const loadFavorites = () => {
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        
+        // Actualizar iconos de corazón en productos
+        const wishlistIcons = document.querySelectorAll('.wishlist-icon');
+        wishlistIcons.forEach(icon => {
+            const productItem = icon.closest('.product-item');
+            if (productItem) {
+                const productId = productItem.getAttribute('data-product-id');
+                if (productId && favorites.includes(productId)) {
+                    icon.classList.add('active');
+                }
+            }
+        });
+        
+        // Actualizar iconos del header
+        updateHeaderHearts(favorites.length > 0);
+    };
+    
+    // Actualizar iconos de corazón en el header
+    const updateHeaderHearts = (hasFavorites) => {
+        document.querySelectorAll('.favorites-icon').forEach(icon => {
+            if (hasFavorites) {
+                icon.classList.add('has-favorites');
+            } else {
+                icon.classList.remove('has-favorites');
+            }
+        });
+        
+        // Asegurarse que los iconos Feather se actualicen correctamente
+        if (window.feather) {
+            feather.replace();
+        }
+    };
+    
+    // Guardar favorito
+    const toggleFavorite = (productId) => {
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        const isFavorite = favorites.includes(productId);
+        
+        if (isFavorite) {
+            // Quitar de favoritos
+            favorites = favorites.filter(id => id !== productId);
+        } else {
+            // Agregar a favoritos
+            favorites.push(productId);
+        }
+        
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        updateHeaderHearts(favorites.length > 0);
+        return !isFavorite;
+    };
+    
+    // Inicializar favoritos
+    loadFavorites();
+    
+    // Manejar clics en corazones de productos
+    document.addEventListener('click', function(e) {
+        const wishlistIcon = e.target.closest('.wishlist-icon');
+        if (wishlistIcon) {
+            const productItem = wishlistIcon.closest('.product-item');
+            if (productItem) {
+                const productId = productItem.getAttribute('data-product-id');
+                if (productId) {
+                    const isFavoriteNow = toggleFavorite(productId);
+                    
+                    if (isFavoriteNow) {
+                        wishlistIcon.classList.add('active');
+                    } else {
+                        wishlistIcon.classList.remove('active');
+                    }
+                }
+            }
+        }
+    });
+    
+    // Manejar clics en el ícono de favoritos del header
+    document.querySelectorAll('.favorites-icon').forEach(icon => {
+        icon.addEventListener('click', function(e) {
+            // Este evento solo debe navegar a la página de favoritos
+            // La clase active se maneja automáticamente
+        });
+    });
 }); 
