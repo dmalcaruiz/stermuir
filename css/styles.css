@@ -824,10 +824,14 @@ body.menu-open {
 /* Para arreglar el placeholder del campo de fecha */
 input[type="date"] {
     position: relative;
+}
+
+/* Hide the default text for empty date fields */
+input[type="date"]:not(:focus):not(:valid) {
     color: transparent;
 }
 
-input[type="date"]::-webkit-datetime-edit {
+input[type="date"]:not(:focus):not(:valid)::-webkit-datetime-edit {
     color: transparent;
 }
 
@@ -845,13 +849,21 @@ input[type="date"]::before {
     pointer-events: none;
 }
 
+/* Hide placeholder when field is focused or has a value */
 input[type="date"]:focus::before,
 input[type="date"]:valid::before {
     display: none;
 }
 
+/* Show text color when field is focused or has a value */
 input[type="date"]:focus,
 input[type="date"]:valid {
+    color: var(--text-color);
+}
+
+/* Ensure the date edit element shows the text in correct color */
+input[type="date"]:focus::-webkit-datetime-edit,
+input[type="date"]:valid::-webkit-datetime-edit {
     color: var(--text-color);
 }
 
