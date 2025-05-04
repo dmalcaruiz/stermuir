@@ -449,8 +449,33 @@ h2 {
     color: #ffffff;
 }
 
+/* Mobile nav icons */
+.mobile-nav-icons {
+    display: none;
+    align-items: center;
+    height: 100%;
+}
+
+.mobile-favorites-icon {
+    padding: 0 10px;
+}
+
+.main-header.scrolled .mobile-nav-icons .feather {
+    color: #000000;
+}
+
+@media (max-width: 912px) {
+    .mobile-nav-icons {
+        display: flex;
+    }
+}
+
 @media (min-width: 913px) {
     .hamburger-menu {
+        display: none;
+    }
+    
+    .mobile-favorites-icon {
         display: none;
     }
 }
@@ -787,25 +812,47 @@ body.menu-open {
     font-family: var(--font-primary);
 }
 
-/* Estilo especial para el input tipo date */
-input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(0.5);
-}
-input[type="date"]::-webkit-datetime-edit-text,
-input[type="date"]::-webkit-datetime-edit-month-field,
-input[type="date"]::-webkit-datetime-edit-day-field,
-input[type="date"]::-webkit-datetime-edit-year-field {
+/* Para arreglar el placeholder del campo de fecha */
+input[type="date"] {
+    position: relative;
     color: transparent;
 }
-input[type="date"]:focus::-webkit-datetime-edit-text,
-input[type="date"]:focus::-webkit-datetime-edit-month-field,
-input[type="date"]:focus::-webkit-datetime-edit-day-field,
-input[type="date"]:focus::-webkit-datetime-edit-year-field,
-input[type="date"]:valid::-webkit-datetime-edit-text,
-input[type="date"]:valid::-webkit-datetime-edit-month-field,
-input[type="date"]:valid::-webkit-datetime-edit-day-field,
-input[type="date"]:valid::-webkit-datetime-edit-year-field {
+
+input[type="date"]::-webkit-datetime-edit {
+    color: transparent;
+}
+
+input[type="date"]::before {
+    content: attr(placeholder);
+    position: absolute;
+    color: #999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    pointer-events: none;
+}
+
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+    display: none;
+}
+
+input[type="date"]:focus,
+input[type="date"]:valid {
     color: var(--text-color);
+}
+
+/* Ajuste del icono de calendario */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.7;
 }
 
 @media (max-width: 768px) {
