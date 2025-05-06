@@ -15,6 +15,12 @@
             margin: 0;
             padding: 0;
         }
+
+        @media (max-width: 768px) {
+            .hero-container img[src="images/top-header-index.jpeg"] {
+                content: url("../images/low-header-index-mobile.png");
+            }
+        }
     </style>
 </head>
 <body>
@@ -22,7 +28,7 @@
         <div class="top-nav">
             <div class="nav-left">
                 <ul>
-                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="about.html">Nuestra Historia</a></li>
                 </ul>
             </div>
             <div class="logo">
@@ -52,7 +58,7 @@
     <div class="mobile-menu">
         <nav>
             <ul>
-                <li><a href="about.html">Sobre Nosotros</a></li>
+                <li><a href="about.html">Nuestra Historia</a></li>
                 <li><a href="#contacto-section">Únete</a></li>
             </ul>
             <div class="mobile-icons">
@@ -64,19 +70,20 @@
     </div>
 
     <div class="hero-container">
-        <img src="images/hero-image.jpg" alt="STER MUIR Collection">
+        <img src="images/top-header-index.jpeg" alt="STER MUIR Collection">
     </div>
 
     <div class="elegant-quote">
         <blockquote>
-            Tu esencia, <span class="highlight">nuestro legado</span>
+            Cada pieza, <span class="highlight">una historia</span>
         </blockquote>
     </div>
 
     <div class="product-showcase">
         <div class="product-item" data-product-id="corazon-negro">
             <div class="product-image-container">
-                <img src="images/placeholder-1.jpg" alt="Corazón Negro" class="product-image">
+                <img src="images/A1.png" alt="Corazón Negro" class="product-image primary-image">
+                <img src="images/A2.png" alt="Corazón Negro" class="product-image secondary-image">
                 <div class="wishlist-icon">
                     <i data-feather="heart"></i>
                 </div>
@@ -87,7 +94,8 @@
         
         <div class="product-item" data-product-id="corazon-marron">
             <div class="product-image-container">
-                <img src="images/placeholder-2.jpg" alt="Corazón Marrón" class="product-image">
+                <img src="images/B1.png" alt="Corazón Marrón" class="product-image primary-image">
+                <img src="images/B2.png" alt="Corazón Marrón" class="product-image secondary-image">
                 <div class="wishlist-icon">
                     <i data-feather="heart"></i>
                 </div>
@@ -98,7 +106,8 @@
         
         <div class="product-item" data-product-id="corazon-rojo">
             <div class="product-image-container">
-                <img src="images/placeholder-3.jpg" alt="Corazón Rojo" class="product-image">
+                <img src="images/C1.png" alt="Corazón Rojo" class="product-image primary-image">
+                <img src="images/C2.png" alt="Corazón Rojo" class="product-image secondary-image">
                 <div class="wishlist-icon">
                     <i data-feather="heart"></i>
                 </div>
@@ -109,7 +118,8 @@
         
         <div class="product-item" data-product-id="corazon-blanco">
             <div class="product-image-container">
-                <img src="images/placeholder-4.jpg" alt="Corazón Blanco" class="product-image">
+                <img src="images/D1.png" alt="Corazón Blanco" class="product-image primary-image">
+                <img src="images/D2.png" alt="Corazón Blanco" class="product-image secondary-image">
                 <div class="wishlist-icon">
                     <i data-feather="heart"></i>
                 </div>
@@ -120,12 +130,12 @@
     </div>
 
     <div class="bottom-hero-container">
-        <img src="images/bottom-hero.jpg" alt="STER MUIR Collection" class="bottom-hero-image">
+        <img src="images/BG1.png" alt="STER MUIR Collection" class="bottom-hero-image">
     </div>
 
     <div id="contacto-section" class="contact-form-container">
         <h1 class="contact-title">ÚNETE</h1>
-        <p class="contact-description">Estamos aquí para ayudarte. ¡Contáctanos!</p>
+        <p class="contact-description">Nuestra historia pronto tomará forma en piezas exclusivas. Únete a nuestro círculo íntimo y recibe acceso anticipado a la primera colección de carteras Ster Muir.</p>
         
         <form action="https://formspree.io/f/xeoggjrr" method="POST" id="contact-form" class="contact-form">
             <div class="form-group full-width">

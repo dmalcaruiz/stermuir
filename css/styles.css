@@ -7,98 +7,66 @@
 
 /* Definición de fuentes */
 @font-face {
-    font-family: 'Futura';
-    src: url('../fonts/FuturaLT-Light.woff2') format('woff2');
+    font-family: 'GowunDodum';
+    src: url('../fonts/GowunDodum-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fustat';
+    src: url('../fonts/Fustat-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Futura';
-    src: url('../fonts/FuturaLT-LightOblique.woff2') format('woff2');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura';
-    src: url('../fonts/FuturaLT-Book.woff2') format('woff2');
+    font-family: 'Fustat';
+    src: url('../fonts/Fustat-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Futura';
-    src: url('../fonts/FuturaLT-BookOblique.woff2') format('woff2');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura';
-    src: url('../fonts/FuturaLT-Bold.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura';
-    src: url('../fonts/FuturaLT-BoldOblique.woff2') format('woff2');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura';
-    src: url('../fonts/FuturaLT-Heavy.woff2') format('woff2');
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura';
-    src: url('../fonts/FuturaLT-HeavyOblique.woff2') format('woff2');
-    font-weight: 800;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura';
-    src: url('../fonts/FuturaLT-ExtraBold.woff2') format('woff2');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura';
-    src: url('../fonts/FuturaLT-ExtraBoldOblique.woff2') format('woff2');
-    font-weight: 900;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Futura';
-    src: url('../fonts/FuturaLT.woff2') format('woff2');
+    font-family: 'Fustat';
+    src: url('../fonts/Fustat-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Futura';
-    src: url('../fonts/FuturaLT-Oblique.woff2') format('woff2');
-    font-weight: 500;
-    font-style: italic;
+    font-family: 'Fustat';
+    src: url('../fonts/Fustat-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fustat';
+    src: url('../fonts/Fustat-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fustat';
+    src: url('../fonts/Fustat-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fustat';
+    src: url('../fonts/Fustat-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
     font-display: swap;
 }
 
@@ -130,7 +98,7 @@
     --form-bg: #f9f9f9;
     --input-bg: #ffffff;
     --box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    --font-primary: 'Futura', Arial, sans-serif;
+    --font-primary: 'Fustat', Arial, sans-serif;
     --font-quote: 'Kepler', 'Times New Roman', serif;
     --header-height: 56px;
     --scroll-padding: 70px;
@@ -213,7 +181,7 @@ body {
     font-weight: normal;
     letter-spacing: -0.1px;
     padding: 0 15px;
-    font-size: 14.5px;
+    font-size: 15.5px;
     text-transform: none;
     transition: color 0.3s;
     display: flex;
@@ -317,12 +285,6 @@ main {
     opacity: 1;
 }
 
-@media (max-width: 768px) {
-    .hero-container img[src="images/hero-image.jpg"] {
-        content: url("../images/hero-image-2.jpg");
-    }
-}
-
 section {
     margin-bottom: 2rem;
 }
@@ -406,10 +368,6 @@ h2 {
     
     .logo-image {
         height: 20px;
-    }
-    
-    .hero-container img[src="images/hero-image.jpg"] {
-        content: url("../images/hero-image-2.jpg");
     }
 }
 
@@ -624,6 +582,30 @@ body.menu-open {
     transition: transform 0.3s ease;
 }
 
+.primary-image {
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.secondary-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+.product-image-container:hover .primary-image {
+    opacity: 0;
+}
+
+.product-image-container:hover .secondary-image {
+    opacity: 1;
+}
+
 .product-image-container::before {
     content: "";
     position: absolute;
@@ -632,7 +614,7 @@ body.menu-open {
     width: 100%;
     height: 100%;
     background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0) 70%);
-    z-index: 2;
+    z-index: 3;
     opacity: 0;
     transition: opacity 0.15s ease;
     pointer-events: none;
@@ -650,7 +632,7 @@ body.menu-open {
     position: absolute;
     top: 0.8rem;
     right: 0.8rem;
-    z-index: 3;
+    z-index: 4;
     cursor: pointer;
 }
 
@@ -1034,7 +1016,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 14px;
+    font-size: 16px;
     min-width: 200px;
 }
 

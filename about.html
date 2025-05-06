@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Sobre Nosotros - STER MUIR</title>
+    <title>Nuestra Historia - STER MUIR</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
@@ -54,9 +54,16 @@
             line-height: 1.6;
         }
         
-        .content-placeholder {
-            min-height: 400px;
-            background-color: white;
+        .about-content {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
         }
         
         @media (max-width: 768px) {
@@ -75,7 +82,7 @@
         <div class="top-nav">
             <div class="nav-left">
                 <ul>
-                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="about.html">Nuestra Historia</a></li>
                 </ul>
             </div>
             <div class="logo">
@@ -105,7 +112,7 @@
     <div class="mobile-menu">
         <nav>
             <ul>
-                <li><a href="about.html">Sobre Nosotros</a></li>
+                <li><a href="about.html">Nuestra Historia</a></li>
                 <li><a href="#contacto-section">Únete</a></li>
             </ul>
             <div class="mobile-icons">
@@ -117,20 +124,28 @@
     </div>
 
     <div class="about-cover">
-        <img src="images/bottom-hero.jpg" alt="STER MUIR - Sobre Nosotros">
+        <img src="images/top-header-nuestra-historia.png" alt="STER MUIR - Nuestra Historia">
         <div class="about-cover-content">
-            <h1>SOBRE NOSOTROS</h1>
-            <p>Descubre nuestra historia, misión y valores que nos inspiran a crear piezas únicas llenas de tradición y modernidad.</p>
+            <h1>NUESTRA HISTORIA</h1>
+            <p>Descubre el legado que nos inspira a crear piezas únicas llenas de tradición y modernidad.</p>
         </div>
     </div>
 
-    <div class="content-placeholder">
-        <!-- Contenido de la página a agregar más adelante -->
+    <div class="about-content">
+        <p>Donde las aguas susurran secretos de tierras altas y los vientos andinos guardan memorias milenarias, nace nuestra esencia. Un diálogo entre paisajes distantes que el destino decidió entrelazar.</p>
+        
+        <p>Ster Muir habita en esa convergencia de mundos: el tartán que viajó por mares bravíos y encontró cobijo en el textil ancestral de las montañas sagradas. No fue un simple traslado, sino una transformación que honra ambos orígenes.</p>
+        
+        <p>Los hilos de nuestra historia comenzaron a tejerse hace generaciones, cuando un viajero solitario partió de costas brumosas llevando consigo tradiciones que resonarían con fuerza en nuevas tierras. Al llegar, descubrió patrones y colores que, aunque diferentes, hablaban el mismo idioma.</p>
+        
+        <p>Cada pieza que creamos lleva este pacto silencioso entre dos latitudes que danzan en nuestras venas. Una promesa de preservar lo mejor de ambos mundos: la sobriedad y elegancia de uno, la vibrante expresividad del otro.</p>
+        
+        <p>Nuestra marca no es solo un nombre o un producto. Es el testimonio de un viaje, un puente entre continentes y una celebración de raíces que, aunque diversas, crecen juntas hacia el mismo cielo.</p>
     </div>
 
     <div id="contacto-section" class="contact-form-container">
         <h1 class="contact-title">ÚNETE</h1>
-        <p class="contact-description">Estamos aquí para ayudarte. ¡Contáctanos!</p>
+        <p class="contact-description">Nuestra historia pronto tomará forma en piezas exclusivas. Únete a nuestro círculo íntimo y recibe acceso anticipado a la primera colección de carteras Ster Muir.</p>
         
         <form action="https://formspree.io/f/xeoggjrr" method="POST" id="contact-form" class="contact-form">
             <div class="form-group full-width">
@@ -142,7 +157,7 @@
             </div>
             
             <div class="form-group full-width">
-                <input type="date" id="birthdate" name="birthdate" placeholder="Cumpleaños (DD/MM)" required>
+                <input type="date" id="birthdate" name="birthdate" placeholder="Fecha de Cumpleaños (dd/mm/aaaa)" required>
             </div>
             
             <div class="form-group full-width text-center">
