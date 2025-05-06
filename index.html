@@ -15,10 +15,53 @@
             margin: 0;
             padding: 0;
         }
+        
+        .hero-container {
+            position: relative;
+            height: auto !important;
+        }
+        
+        .hero-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+        
+        .hero-container img {
+            display: block;
+            width: 100%;
+            height: auto !important;
+            object-fit: contain !important;
+        }
+        
+        .elegant-quote blockquote span.highlight {
+            margin-left: 2px;
+        }
+        
+        .bottom-hero-container img {
+            object-position: center 15%;
+        }
+        
+        .contact-form-container {
+            background-color: #f3f3f3;
+        }
 
         @media (max-width: 768px) {
-            .hero-container img[src="images/top-header-index.jpeg"] {
-                content: url("../images/low-header-index-mobile.png");
+            .hero-container img, .bottom-hero-container img {
+                height: auto !important;
+                width: 100% !important;
+                object-fit: cover !important;
+                display: block !important;
+            }
+            
+            .hero-container::after {
+                height: 30%;
             }
         }
     </style>
@@ -70,7 +113,9 @@
     </div>
 
     <div class="hero-container">
-        <img src="images/top-header-index.jpeg" alt="STER MUIR Collection">
+        <picture>
+            <img src="images/top-header-index.jpeg" alt="STER MUIR Collection">
+        </picture>
     </div>
 
     <div class="elegant-quote">
@@ -130,7 +175,10 @@
     </div>
 
     <div class="bottom-hero-container">
-        <img src="images/BG1.png" alt="STER MUIR Collection" class="bottom-hero-image">
+        <picture>
+            <source media="(max-width: 768px)" srcset="images/low-header-index-mobile.png">
+            <img src="images/low-header-index-desktop.png" alt="STER MUIR Collection" class="bottom-hero-image">
+        </picture>
     </div>
 
     <div id="contacto-section" class="contact-form-container">

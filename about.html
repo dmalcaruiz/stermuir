@@ -16,63 +16,145 @@
             padding: 0;
         }
         
-        .about-cover {
-            width: 100%;
-            height: 80vh;
-            position: relative;
-            background-color: #000;
-            overflow: hidden;
+        /* Override header styles for this page only */
+        .main-header {
+            background-color: white !important;
+            box-shadow: none !important;
         }
         
-        .about-cover img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.7;
+        .main-header a {
+            color: #000000 !important;
         }
         
-        .about-cover-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .main-header .logo-image {
+            filter: none !important;
+        }
+        
+        .main-header .feather {
+            color: #000000 !important;
+            stroke: #000000 !important;
+        }
+        
+        .page-title {
             text-align: center;
-            color: white;
-            width: 80%;
-            max-width: 800px;
+            margin: 110px auto 2rem;
+            max-width: 1200px;
+            padding: 0 2rem;
         }
         
-        .about-cover-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 500;
-            letter-spacing: 1px;
+        .page-title .nuestra {
+            font-family: 'Kepler', 'Times New Roman', serif;
+            font-weight: 300;
+            font-style: italic;
+            font-size: 1.55em;
+            display: inline;
+            margin-right: 0.5px;
         }
         
-        .about-cover-content p {
-            font-size: 1.2rem;
-            line-height: 1.6;
+        .page-title .historia {
+            font-family: 'Fustat', Arial, sans-serif;
+            font-weight: 300;
+            text-transform: uppercase;
+            font-size: 1.03em;
+            display: inline;
         }
         
         .about-content {
-            max-width: 800px;
-            margin: 4rem auto;
+            max-width: 1200px;
+            margin: 0 auto 4rem;
             padding: 0 2rem;
-            font-size: 1.1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        .about-image {
+            width: 100%;
+            height: auto;
+            max-height: calc(100vh - 340px);
+            object-fit: contain;
+            display: block;
+        }
+        
+        .about-text {
+            font-size: 0.9rem;
             line-height: 1.8;
         }
         
-        .about-content p {
+        .text-content-blocks {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            color: black;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 1px;
+            background-color: rgba(0,0,0,0.15);
+        }
+        
+        .about-text p {
             margin-bottom: 1.5rem;
         }
         
+        .text-block {
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .text-content-blocks .text-block p {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            font-size: 0.9rem;
+            line-height: 1.9;
+            padding: 0 1.5rem;
+        }
+        
+        .contact-form-container {
+            background-color: #f3f3f3;
+        }
+        
         @media (max-width: 768px) {
-            .about-cover-content h1 {
-                font-size: 2.5rem;
+            .page-title {
+                margin-top: 80px;
             }
             
-            .about-cover-content p {
-                font-size: 1rem;
+            .about-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                margin-bottom: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.2rem;
+            }
+            
+            .text-content-blocks .text-block p {
+                padding: 0 0.5rem;
             }
         }
     </style>
@@ -123,24 +205,47 @@
         </nav>
     </div>
 
-    <div class="about-cover">
-        <img src="images/top-header-nuestra-historia.png" alt="STER MUIR - Nuestra Historia">
-        <div class="about-cover-content">
-            <h1>NUESTRA HISTORIA</h1>
-            <p>Descubre el legado que nos inspira a crear piezas únicas llenas de tradición y modernidad.</p>
-        </div>
-    </div>
+    <h1 class="page-title">
+        <span class="nuestra">Nuestra</span> <span class="historia">HISTORIA</span>
+    </h1>
 
     <div class="about-content">
-        <p>Donde las aguas susurran secretos de tierras altas y los vientos andinos guardan memorias milenarias, nace nuestra esencia. Un diálogo entre paisajes distantes que el destino decidió entrelazar.</p>
+        <div class="about-section">
+            <div class="about-text">
+                <div class="text-block">
+                    <p>Donde las aguas susurran secretos de tierras altas y los vientos andinos guardan memorias milenarias, nace nuestra esencia. Un diálogo entre paisajes distantes que el destino decidió entrelazar.</p>
+                    
+                    <p>Ster Muir habita en esa convergencia de mundos: el tartán que viajó por mares bravíos y encontró cobijo en el textil ancestral de las montañas sagradas. No fue un simple traslado, sino una transformación que honra ambos orígenes.</p>
+                    
+                    <p>Los hilos de nuestra historia comenzaron a tejerse hace generaciones, cuando un viajero solitario partió de costas brumosas llevando consigo tradiciones que resonarían con fuerza en nuevas tierras. Al llegar, descubrió patrones y colores que, aunque diferentes, hablaban el mismo idioma.</p>
+                    
+                    <p>Cada pieza que creamos lleva este pacto silencioso entre dos latitudes que danzan en nuestras venas. Una promesa de preservar lo mejor de ambos mundos: la sobriedad y elegancia de uno, la vibrante expresividad del otro.</p>
+                    
+                    <p>Nuestra marca no es solo un nombre o un producto. Es el testimonio de un viaje, un puente entre continentes y una celebración de raíces que, aunque diversas, crecen juntas hacia el mismo cielo.</p>
+                </div>
+            </div>
+            <img src="images/top-header-nuestra-historia.png" alt="STER MUIR - Nuestra Historia" class="about-image">
+        </div>
         
-        <p>Ster Muir habita en esa convergencia de mundos: el tartán que viajó por mares bravíos y encontró cobijo en el textil ancestral de las montañas sagradas. No fue un simple traslado, sino una transformación que honra ambos orígenes.</p>
-        
-        <p>Los hilos de nuestra historia comenzaron a tejerse hace generaciones, cuando un viajero solitario partió de costas brumosas llevando consigo tradiciones que resonarían con fuerza en nuevas tierras. Al llegar, descubrió patrones y colores que, aunque diferentes, hablaban el mismo idioma.</p>
-        
-        <p>Cada pieza que creamos lleva este pacto silencioso entre dos latitudes que danzan en nuestras venas. Una promesa de preservar lo mejor de ambos mundos: la sobriedad y elegancia de uno, la vibrante expresividad del otro.</p>
-        
-        <p>Nuestra marca no es solo un nombre o un producto. Es el testimonio de un viaje, un puente entre continentes y una celebración de raíces que, aunque diversas, crecen juntas hacia el mismo cielo.</p>
+        <div class="text-content-blocks">
+            <div class="text-block">
+                <h2 class="section-title">Nuestro Nombre</h2>
+                <p>La palabra Ster guarda en su sonido algo muy íntimo: una estrella, un destello, una raíz llamada Esther que trae consigo la fuerza silenciosa de un nombre heredado.</p>
+                
+                <p>Muir significa mar en gaélico. El mar es calma, es origen, es expansión. Como la artesanía: nace pequeña, pero se extiende, abraza, transforma.</p>
+                
+                <p>Ster Muir es la unión de esos dos mundos: la chispa y la calma, el fuego y el agua, símbolos de una historia cuyas raíces vienen de mucho antes.</p>
+            </div>
+
+            <div class="text-block">
+                <h2 class="section-title">Nuestra Esencia</h2>
+                <p>En un mundo que corre, elegimos detenernos. En un mercado de objetos, elegimos crear piezas con alma.</p>
+            
+                <p>Cada pieza es más que un accesorio; es un refugio, una raíz, una historia hecha en calma. Sin prisa, sin moldes. Cada puntada está hecha a mano. Cada borde está pintado con paciencia. Cada pieza lleva el fuego de quien la crea y la calma de quien la usa.</p>
+                
+                <p>No buscamos moda; buscamos permanencia. No hacemos productos; creamos historias hechas cuero.</p>
+            </div>
+        </div>
     </div>
 
     <div id="contacto-section" class="contact-form-container">
