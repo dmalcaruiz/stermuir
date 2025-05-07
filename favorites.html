@@ -44,6 +44,18 @@
             font-size: 1.1rem;
             line-height: 1.6;
         }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #888;
+            margin-right: 8px;
+            font-size: 0.9em;
+        }
+        
+        .discount-price {
+            font-weight: bold;
+            color: #d04646;
+        }
     </style>
 </head>
 <body>
@@ -142,22 +154,22 @@
         const productData = {
             'corazon-negro': {
                 title: 'Corazón Negro',
-                price: 'S/. 100.00',
+                price: '<span class="original-price">S/. 100.00</span> <span class="discount-price">S/. 62.00</span>',
                 image: 'images/A1.png'
             },
             'corazon-marron': {
                 title: 'Corazón Marrón',
-                price: 'S/. 100.00',
+                price: '<span class="original-price">S/. 100.00</span> <span class="discount-price">S/. 62.00</span>',
                 image: 'images/B1.png'
             },
             'corazon-rojo': {
                 title: 'Corazón Rojo',
-                price: 'S/. 100.00',
+                price: '<span class="original-price">S/. 100.00</span> <span class="discount-price">S/. 62.00</span>',
                 image: 'images/C1.png'
             },
             'corazon-blanco': {
                 title: 'Corazón Blanco',
-                price: 'S/. 100.00',
+                price: '<span class="original-price">S/. 100.00</span> <span class="discount-price">S/. 62.00</span>',
                 image: 'images/D1.png'
             }
         };
