@@ -44,7 +44,18 @@
             margin-left: 2px;
         }
         
+        .bottom-hero-container {
+            width: 100%;
+            height: 65vh; /* Altura relativa al viewport */
+            overflow: hidden; /* Para asegurar que la imagen no se desborde */
+            margin-top: 0px; /* Desplazar hacia abajo por el header fijo */
+        }
+        
         .bottom-hero-container img {
+            display: block;
+            width: 100%;
+            height: 100%; /* Para llenar la altura del contenedor */
+            object-fit: cover;
             object-position: center 15%;
         }
         
@@ -74,6 +85,10 @@
             
             .hero-container::after {
                 height: 30%;
+            }
+
+            .bottom-hero-container { /* Restaurar altura automática en móviles */
+                height: auto;
             }
         }
     </style>
@@ -124,9 +139,10 @@
         </nav>
     </div>
 
-    <div class="hero-container">
+    <div class="bottom-hero-container">
         <picture>
-            <img src="images/top-header-index.jpeg" alt="STER MUIR Collection">
+            <source media="(max-width: 768px)" srcset="images/low-header-index-mobile.png">
+            <img src="images/low-header-index-desktop.png" alt="STER MUIR Collection" class="bottom-hero-image">
         </picture>
     </div>
 
@@ -184,13 +200,6 @@
             <h3 class="product-title">Corazón Blanco</h3>
             <p class="product-price"><span class="original-price">S/. 100.00</span> <span class="discount-price">S/. 62.00</span></p>
         </div>
-    </div>
-
-    <div class="bottom-hero-container">
-        <picture>
-            <source media="(max-width: 768px)" srcset="images/low-header-index-mobile.png">
-            <img src="images/low-header-index-desktop.png" alt="STER MUIR Collection" class="bottom-hero-image">
-        </picture>
     </div>
 
     <div id="contacto-section" class="contact-form-container">

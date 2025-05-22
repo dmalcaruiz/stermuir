@@ -177,7 +177,7 @@ body {
 
 .main-header a {
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
     font-weight: normal;
     letter-spacing: -0.1px;
     padding: 0 15px;
@@ -217,7 +217,7 @@ body {
 .logo-image {
     height: 24px;
     max-width: 100%;
-    filter: brightness(0) invert(1);
+    filter: none;
     transition: filter 0.3s ease;
 }
 
@@ -232,7 +232,7 @@ body {
     stroke-width: 1.5;
     width: 18px;
     height: 18px;
-    color: #ffffff;
+    color: #000000;
     stroke: currentColor;
 }
 
@@ -403,7 +403,7 @@ h2 {
     stroke-width: 1.5;
     width: 24px;
     height: 24px;
-    color: #ffffff;
+    color: #000000;
 }
 
 .hamburger-menu.active .feather {
@@ -932,7 +932,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .favorites-icon.has-favorites svg {
-    fill: white;
+    fill: black;
 }
 
 .main-header.scrolled .favorites-icon.has-favorites svg {
